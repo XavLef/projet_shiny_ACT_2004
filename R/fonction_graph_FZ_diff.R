@@ -2,8 +2,10 @@
 graph_FZ_diff <- function(Z, t, tqx, n)
 {
     ggplot() +
-        geom_segment(aes(x = Z[t == n], xend = 1.1, y = 1, yend = 1), linewidth = 1) +
-        geom_line(aes(x = Z[t >= n], y = 1 + tqx[t == n] - tqx[t >= n]), linewidth = 1) +
+        geom_segment(aes(x = Z[t == n], xend = 1.1, y = 1, yend = 1),
+                     linewidth = 1)
+        geom_line(aes(x = Z[t >= n], y = 1 + tqx[t == n] - tqx[t >= n]),
+                  linewidth = 1) +
         geom_segment(aes(x = 0,
                          xend = Z[length(Z)],
                          y = tqx[t == n],

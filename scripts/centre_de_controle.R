@@ -8,9 +8,9 @@ library(scales)
 library(projetShinyACT2004)
 library(shiny)
 
-usethis::use_description()
-usethis::use_namespace()
-devtools::document()
+#usethis::use_description()
+#usethis::use_namespace()
+#devtools::document()
 
 install.packages("renv")
 detach("package:projetShinyACT2004", unload = TRUE)
