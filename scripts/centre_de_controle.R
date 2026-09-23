@@ -1,23 +1,34 @@
-library(ggplot2)
-library(latex2exp)
-library(reshape2)
-library(magrittr)
-library(roxygen2)
-library(devtools)
-library(scales)
+###
+### Paquetages
+###
+
+## Paquetages requis
+pqtg <- c("ggplot2", "latex2exp", "reshape2", "magrittr", "roxygen2", "scales",
+          "shiny", "devtools")
+
+## Paquetages installés
+inst_pqtg <- rownames(installed.packages())
+
+## Installation (si nécessaire)
+invisible(sapply(pqtg[!pqtg %in% inst_pqtg], install.packages))
+
+## Chargement
+invisible(sapply(pqtg, library, character.only = TRUE))
+
+
+###
+### Installer et charger le paquetage depuis GitHub
+###
+install_github("XavLef/projet_shiny_ACT_2004")
 library(projetShinyACT2004)
-library(shiny)
 
-#usethis::use_description()
-#usethis::use_namespace()
-#devtools::document()
 
-install.packages("renv")
-detach("package:projetShinyACT2004", unload = TRUE)
-install_github("MonsieurMuffler/projetShinyACT2004")
-detach("package:projetShinyACT2004", unload = TRUE)
-install.packages('digest', repos='http://cran.us.r-project.org')
-Y
+###
+### Lancer les applications Shiny avec R (être dans le répertoire du projet)
+###
 
-remove.packages("digest")
-install.packages("digest")
+## Application Y
+runApp("application_Y/")
+
+## Application Z
+runApp("application_Z/")

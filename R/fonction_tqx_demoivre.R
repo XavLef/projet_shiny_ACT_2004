@@ -34,5 +34,5 @@ tqx_demoivre <- function(x, t, omega)
                     " mortalité de De Moivre"))
 
     ## Probabilité
-    t/(omega - x)
+    t/denom
 }
